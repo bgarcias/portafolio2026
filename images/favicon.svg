@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#000000"/>
+  <text x="14" y="22" font-family="monospace" font-size="16" fill="#2F8FFF">&gt;</text>
+  <text x="12" y="46" font-family="monospace" font-size="20" fill="#FFFFFF">bg_</text>
+</svg>
