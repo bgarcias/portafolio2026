@@ -304,14 +304,50 @@ ul {
 }
 
 /* Hero Section */
+/* Hero Section */
 .hero {
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
     padding-top: 80px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(30, 144, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 144, 255, 0.12) 1px, transparent 1px);
+    background-size:
+        38px 38px,
+        38px 38px,
+        190px 190px,
+        190px 190px;
+    background-position: center center;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (max-width: 768px) {
+    .hero::before {
+        background-size:
+            26px 26px,
+            26px 26px,
+            130px 130px,
+            130px 130px;
+        opacity: 0.45;
+    }
 }
 
 .hero-container {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 4rem;
@@ -650,6 +686,47 @@ ul {
 }
 
 /* Stack Section */
+.stack.section {
+    position: relative;
+    overflow: hidden;
+}
+
+.stack.section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(rgba(30, 144, 255, 0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30, 144, 255, 0.012) 1px, transparent 1px);
+    background-size:
+        34px 34px,
+        34px 34px,
+        170px 170px,
+        170px 170px;
+    background-position: center center;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (max-width: 768px) {
+    .stack.section::before {
+        background-size:
+            24px 24px,
+            24px 24px,
+            110px 110px,
+            110px 110px;
+        opacity: 0.4;
+    }
+}
+
+.stack.section>.container {
+    position: relative;
+    z-index: 1;
+}
+
 .stack-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -982,6 +1059,7 @@ ul {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2.5rem;
+        padding-bottom: 32px;
     }
 
     .terminal-text {
